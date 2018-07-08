@@ -85,7 +85,8 @@ function Game() {
 
         this.gameOver = () => {
             if (this.furry.x < 0 || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
-                console.log("matoł");
+                document.getElementById("game_over").classList.remove("invisible");
+
                 this.hideVisibleFurry();
                 clearInterval(this.idSetInterval);
                 return true;
@@ -97,7 +98,7 @@ function Game() {
         this.startGame = function () {
             this.idSetInterval = setInterval(() => {
                 this.moveFurry()
-            }, 250)
+            }, 250),
 
             document.addEventListener('keydown', (event) => {
                 this.turnFurry(event.which);
