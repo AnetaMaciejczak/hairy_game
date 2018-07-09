@@ -86,7 +86,6 @@ function Game() {
         this.gameOver = () => {
             if (this.furry.x < 0 || this.furry.x > 9 || this.furry.y < 0 || this.furry.y > 9) {
                 document.getElementById("board").classList.add("invisible");
-
                 document.getElementById("game_over").classList.remove("invisible");
                 this.hideVisibleFurry();
                 clearInterval(this.idSetInterval);

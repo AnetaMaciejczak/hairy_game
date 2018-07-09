@@ -70,6 +70,8 @@
 "use strict";
 
 
+console.log("działam");
+
 function Furry() {
     this.x = 0, this.y = 0, this.direction = "right";
 }
@@ -137,11 +139,11 @@ function Game() {
         }
     }, this.gameOver = function () {
         if (_this.furry.x < 0 || _this.furry.x > 9 || _this.furry.y < 0 || _this.furry.y > 9) {
-            console.log("matołfdsfs");
-            console.log(document.getElementById("#game_over")); /*.classList.display = "block";*/
+            document.getElementById("board").classList.add("invisible");
+
+            document.getElementById("game_over").classList.remove("invisible");
             _this.hideVisibleFurry();
             clearInterval(_this.idSetInterval);
-
             return true;
         }
         return false;
@@ -150,17 +152,24 @@ function Game() {
 
         this.idSetInterval = setInterval(function () {
             _this2.moveFurry();
-        }, 250);
-
-        document.addEventListener('keydown', function (event) {
+        }, 250), document.addEventListener('keydown', function (event) {
             _this2.turnFurry(event.which);
         });
     };
 }
 
-console.log(document.getElementById("game_over")); /*.classList.display = "block";*/
-
 var bla = new Game();
+console.log(bla.showFurry());
+console.log(bla.showCoin());
+bla.startGame();
+bla.hideVisibleFurry();
+
+// console.dir(bla.index());
+
+
+// this.start = function() {
+//     console.log(this.furry.x)
+// }
 
 /***/ })
 /******/ ]);

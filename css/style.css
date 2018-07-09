@@ -92,12 +92,12 @@ section#score div {
   position: absolute;
   left: 50%;
   top: 50%;
-  border: 2px solid gray;
+  /*border: 2px solid gray;*/
   border-radius: 7px;
   transform: translate(-50%, -50%);
   font-size: 50px;
   font-weight: 900;
-  color: red;
-  background-color: rgba(255, 255, 255, 0.8);
+  color: orangered;
+  background-color: rgba(255, 255, 255, 0);
   padding: 5px;
 }
